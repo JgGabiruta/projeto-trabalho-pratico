@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: moke;
+}
+
+.menu{
+    float: top;
+    margin: 10px;
+    
+}
+.menu ul {
+    list-style-type: none;
+    font-size: larger;
+}
+.menu ul li {
+    display: inline-block;
+    padding:10px;
+    background-color: #ccc;
+    
+}
+.menu ul li:hover {
+    background-color: gray;
+    color:  white;
+}
+#nome{
+    background-color: #ccc;
+    padding: 10px;
+    margin-right: 50%;
+    border-radius: 5px;
+    
+}
+#nome:hover {
+    background-color: gray;
+    color:  white;
+}
+#perfil {
+    font-weight: bolder;
+    border-bottom: solid 1px black;
+
+}
+.perfil img {
+   
+    margin: 10px;
+    padding: 5px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: solid 1px;
+    float: left;
+}
+#eu {
+    border-radius: 8px;
+    width: 100px;
+}
+.perfil {
+    float: right;
+    margin: 10px;
+    
+}
+.perfil h5 {
+    padding-top: 10px;
+}
+.redes img{
+    width: 40px;
+    text-decoration: none;
+    border: solid whitesmoke;
+}
+.repositorios {
+    margin: 10px;
+}
+#repo {
+    border-bottom: solid 1px;
+}
+.conteudo{
+    margin:10px;
+}
+#conteudo {
+    border-bottom: solid 1px;
+}
+.colegas{
+    margin: 10px;
+    
+}
+#colegas {
+    border-bottom: solid 1px;
+
+}
+#alf{
+    border: solid 1px;
+    margin: 10px;
+}
+#die{
+    border: solid 1px;
+    margin: 10px;
+}
+#lucas{
+    border: solid 1px;
+    margin: 10px;
+}
+#pablo{
+    border: solid 1px;
+    margin: 10px;
+}
+#alf img{
+    padding: 10px;
+}
+#lucas img{
+    padding: 10px;
+}
+#die img{
+    padding: 10px;
+}
+#pablo{
+    padding: 10px;
+}
+#projetow {
+    border-bottom: solid #ccc 5px;
+}
+.info ul li {
+    list-style-type: none;
+    float: right;
+    padding: 10px;
+}
+.nav-item{
+    display: none;
+}
+/*Css Mobile */
+@media screen and (max-width:1140px) {
+    .nav-item {
+        display: flex;
+        justify-content: end;
+        float: right;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+    .menu {
+        display: none;
+    }
+
+
+}
