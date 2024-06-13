@@ -1,7 +1,7 @@
 const empresa = document.getElementById('empresa');
 const texto = document.getElementById('empresaD');
 
-fetch('/api/server.js')
+fetch('/api/server')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erro ao carregar os dados');
