@@ -1,7 +1,7 @@
 {
     "conteudo":[
         {
-            "id": 1 ,
+            "id": "1" ,
             "empresa": "Google",
             "descricao": "A Google inovou e continua inovando trazendo sempre experiencias ímpares com seus usuários e ideias revolucionárias",
             "imagem": "/assets/img/google.jpg"
