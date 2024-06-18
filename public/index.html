@@ -33,7 +33,7 @@
 
 body.dark-mode {
     --background-color: #121212;
-    --text-color: #e0e0e0;
+    --text-color: #444;
     --link-color: #bb86fc;
     --hover-background: #333;
     --hover-color: #bb86fc;
@@ -103,10 +103,12 @@ h4, h5, p {
                   <li><a class="dropdown-item" href="#cont">Conteudo Sugerido</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#cole">Colegas</a></li>
+              
                 </ul>
               </li>
+              <button class="modoescurobtn" onclick="toggleDarkMode()">Modo escuro</button>      
         </nav>
-        <button onclick="toggleDarkMode()">Modo escuro</button>
+        
         
         <nav class="menu">
             <ul>
@@ -123,15 +125,23 @@ h4, h5, p {
         <!--Perfil-->
         <div class="perfil mx-2">
             <h4 id="perfil">Perfil</h4>
-            <img id="eu" src="/assets/img/eu2.jpg" alt="...">
+            <img id="eu" src="../assets/img/eu2.jpg" alt="...">
             <h5 class="text-primary">João Gabriel Soares Da Silva Franco</h5>
             <p class="m-2">Olá! Eu sou o João Gabriel e eu estou aqui para programar, meu grande sonho é me tornar um programador de sucesso, neste site você vai encontrar meus repositorios, empresas big tech que achei interessante e que tenho vontade de trabalhar um dia e o meu projeto que tenho com meus colegas.</p>
             <p class="m-2">Localização: Belo Horizonte, Minas Gerais, Brasil</p>
             <p class="">Site: https://github.com/JgGabiruta</p>
             <div class="redes ">
-                <i class="fa-solid fa-user mt-4"> 0</i>
-                <a href="https://www.instagram.com/joao_gabrielgabiruta/" target="_blank"><img src="/assets/img/insta.png" alt="instagram icon" ></a> <a href="mailto: jgssfranco@sga.pucminas.br"><img src="assets/img/email.jpg" alt="gmail icon"></a> <a href="https://github.com/JgGabiruta" target="_blank"><img src="/assets/img/git.jpg" alt="github icon"></a>
-        </div>
+                
+              <div class="grow-container">
+                  <i class="fa-solid fa-user mt-4"> 0</i>
+                <!--INSTAGRAM-->
+                <a href="https://www.instagram.com/joao_gabrielgabiruta/" target="_blank" class="to-insta circle-button"><i class="fa-brands fa-instagram mt-4" aria-hidden="true"></i></a>
+                  <!--GMAIL-->
+                <a href="mailto: jgssfranco@sga.pucminas.br" class="to-red circle-button"><i class="fa fa-google-plus" aria-hidden="true"></i></a> 
+                <!--GITHUB-->
+                <a href="https://github.com/JgGabiruta" target="_blank" class="to-git circle-button"><i class="fa fa-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
         </div>
         <section id="reposito">
             <div class="repositorios">
