@@ -100,15 +100,13 @@ i {
 .perfil img {
    
     margin: 10px;
-    padding: 5px;
     background-color: whitesmoke;
-    border-radius: 5px;
-    border: solid 1px;
+    border-radius: 60%;
+    border: solid #ccc 1px;
     float: left;
 }
 #eu {
-    border-radius: 8px;
-    width: 100px;
+    width: 30%;
 }
 .perfil {
     float: right;
