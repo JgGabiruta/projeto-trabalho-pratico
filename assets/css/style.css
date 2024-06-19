@@ -171,7 +171,7 @@ i {
 }
 
 /*Css Mobile */
-@media screen and (max-width:1140px) {
+@media screen and (max-width:1000px) {
     #modoescuro-btn{
         display: none;
     }
