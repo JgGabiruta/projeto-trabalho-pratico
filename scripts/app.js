@@ -1,7 +1,8 @@
-const urlapi = 'http://localhost:3000/conteudo';
+const carouselApi = 'http://localhost:3000/conteudo';
+const colegasApi = 'http://localhost:3000/colegas';
 // Puxando dados do json-server e colocando nos carousel's
 document.addEventListener('DOMContentLoaded', function() {
-  fetch(urlapi)
+  fetch(carouselApi)
       .then(response => response.json())
       .then(data => {
           let indicators = '';
@@ -25,6 +26,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
           document.getElementById('carousel-indicators').innerHTML = indicators;
           document.getElementById('carousel-inner').innerHTML = innerItems;
+      })
+      .catch(error => console.error('Erro ao buscar os dados do JSON Server:', error));
+});
+// Puxando dados do json-server e preenchendo os colegas
+document.addEventListener('DOMContentLoaded', function() {
+  fetch(colegasApi)
+      .then(response => response.json())
+      .then(data => {
+          let colegasContainer = document.querySelector('.row.col')
+          let colegas = '';
+
+          data.forEach(colega => {
+              colegas += `
+                  <div id="colegas" style="width: 10rem;">
+                        <img src="${colega.foto}" class="card-img-top" alt="${colega.nome}">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">${colega.nome}</h5>
+                        </div>
+                    </div>
+              `;
+          });
+
+          colegasContainer.innerHTML = colegas;
       })
       .catch(error => console.error('Erro ao buscar os dados do JSON Server:', error));
 });

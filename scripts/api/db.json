@@ -36,6 +36,28 @@
             "descricao": "Esse é o meu mais novo projeto em conjunto com meus colegas, você poderá ver mais sobre no repositório disponível acima",
             "imagem": "/assets/img/artist.png"
         }
+    ],
+    "colegas":[
+        {
+            "id": "1",
+            "nome": "Alfredo Campos",
+            "foto": "/assets/img/alfredo.jpg"
+        },
+        {
+            "id": "2",
+            "nome": "Diego Romero",
+            "foto": "/assets/img/diego.jpg"
+        },
+        {
+            "id": "3",
+            "nome": "Lucas Fernandes",
+            "foto": "/assets/img/lucas.png"
+        },
+        {
+            "id": "4",
+            "nome": "Pablo Marques",
+            "foto": "/assets/img/pablo.jpg"
+        }
     ]
 }
 
