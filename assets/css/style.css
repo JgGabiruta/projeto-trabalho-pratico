@@ -122,9 +122,12 @@ i {
 }
 .repositorios {
     margin: 10px;
-    display: grid;
 
 }
+.container-fluid{
+    margin: 10px;
+}
+
 .card-body .contadorescards i{
     font-size: 1rem;
 }

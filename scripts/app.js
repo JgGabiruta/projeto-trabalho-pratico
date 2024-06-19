@@ -1,25 +1,42 @@
-/*const empresa = document.getElementById('empresa');
-const texto = document.getElementById('empresaD');
+const urlapi = 'http://localhost:3000/conteudo';
+// Puxando dados do json-server e colocando nos carousel's
+document.addEventListener('DOMContentLoaded', function() {
+  fetch(urlapi)
+      .then(response => response.json())
+      .then(data => {
+          let indicators = '';
+          let innerItems = '';
 
-/*fetch('../api/conteudo')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Erro ao carregar os dados');
-    }
-    return response.json();
-  })
-  .then(conteudo => {
-    empresa.innerHTML = conteudo.empresa || "Dados não encontrados";
-  })
-  .catch(error => {
-    console.error('Erro:', error);
-  });
+          data.forEach((item, index) => {
+              let activeClass = index === 0 ? 'active' : '';
+              indicators += `
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}" class="${activeClass}" aria-current="true" aria-label="Slide ${index + 1}"></button>
+              `;
+              innerItems += `
+                  <div class="carousel-item ${activeClass}">
+                      <img src="${item.imagem}" class="d-block w-100" alt="${item.nome}">
+                      <div class="carousel-caption d-none d-md-block">
+                          <h5>${item.nome}</h5>
+                          <p>${item.descricao}</p>
+                      </div>
+                  </div>
+              `;
+          });
+
+          document.getElementById('carousel-indicators').innerHTML = indicators;
+          document.getElementById('carousel-inner').innerHTML = innerItems;
+      })
+      .catch(error => console.error('Erro ao buscar os dados do JSON Server:', error));
+});
+
+
   
-  */
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
   }
-  //Github
+
+
+  //Github API
   const container = document.querySelector('.container-fluid');
   const user = document.querySelector('.perfil');
   // Dados do usuário
@@ -77,30 +94,30 @@ const texto = document.getElementById('empresaD');
           throw new Error(res.status);
         }
         let data = await res.json();
-  
+
         // Cria o contador de repositórios
         let repoCount = document.createElement('div');
         repoCount.innerHTML = `<div id="repo"><h4>Repositórios (${data.length}):</h4></div>`;
         reposit.appendChild(repoCount);
-  
+
         // Cria a estrutura das divs container-fluid e row
         const container = document.createElement('div');
         container.classList.add('container-fluid');
-  
+
         const row = document.createElement('div');
         row.classList.add('row');
-  
+
         // Adiciona os repositórios à div row
         data.forEach(item => {
           let repo = document.createElement('div');
-          repo.classList.add('col-3', 'm-2'); // Adiciona classes para garantir que os cards estejam alinhados corretamente
+          repo.classList.add('col-sm-12', 'col-md-6', 'col-lg-4', 'col-xl-3', 'mb-4'); // Adiciona classes para garantir que os cards estejam alinhados corretamente e responsivos
           repo.innerHTML = `
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 100%;">
               <div class="card-body">
                 <h5 class="card-title"><a href="${item.html_url}" class="text-decoration-none text-reset">${item.name}</a></h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">${item.description || 'Sem descrição'}</h6>
                 <p class="card-text">${item.language || 'Linguagem não especificada'}</p>
-                <p class= "contadorescards">
+                <p class="contadorescards">
                   <i class="fa-regular fa-star p-1"> ${item.stargazers_count}</i>
                   <i class="fa-solid fa-code-fork p-1"> ${item.forks_count}</i> 
                   <i class="fa-regular fa-eye p-1"> ${item.watchers_count}</i>
@@ -110,18 +127,15 @@ const texto = document.getElementById('empresaD');
           `;
           row.appendChild(repo);
         });
-  
+
         // Adiciona a div row à div container-fluid
         container.appendChild(row);
-  
+
         // Adiciona a div container-fluid ao contêiner principal
         reposit.appendChild(container);
       })
       .catch(error => console.error('Erro ao buscar dados da API:', error));
   }
-  
   getApiGithubRepos();
-  
-  
   getApiGithubUser();
 

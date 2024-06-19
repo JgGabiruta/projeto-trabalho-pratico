@@ -1,10 +1,41 @@
 {
-    "conteudo":[
+    "conteudo": [
         {
-            "id": "1" ,
-            "empresa": "Google",
+            "id": "1",
+            "nome": "Google",
             "descricao": "A Google inovou e continua inovando trazendo sempre experiencias ímpares com seus usuários e ideias revolucionárias",
             "imagem": "/assets/img/google.jpg"
+        },
+        {
+            "id": "2",
+            "nome": "Microsoft",
+            "descricao": "A Microsoft é uma empresa de tecnologia conhecida por seu sistema operacional Windows e software Office.",
+            "imagem": "/assets/img/microsoft.png"
+        },
+        {
+            "id": "3",
+            "nome": "Apple",
+            "descricao": "A Apple foi a primeira a fazer um computador pessoal, e foi a primeira a desenvolver um smartphone, ela conseguiu se manter em relevância até os dias de hoje",
+            "imagem": "/assets/img/apple.jpg"
+        },
+        {
+            "id": "4",
+            "nome": "NVIDIA",
+            "descricao": "Nvidia Corporation estilizada como NVIDIA ou, devido ao seu logotipo, nVIDIA é uma empresa multinacional de tecnologia incorporada em Delaware e com sede em Santa Clara, Califórnia.",
+            "imagem": "/assets/img/nvidia.jpg"
+        },
+        {
+            "id": "5",
+            "nome": "OpenAI",
+            "descricao": "OpenAI é um laboratório de pesquisa de inteligência artificial estadunidense que consiste na organização sem fins lucrativos OpenAI Incorporated e sua subsidiária com fins lucrativos OpenAI Limited Partnership.",
+            "imagem": "/assets/img/openai.png"
+        },
+        {
+            "id": "6",
+            "nome": "Artist Finder",
+            "descricao": "Esse é o meu mais novo projeto em conjunto com meus colegas, você poderá ver mais sobre no repositório disponível acima",
+            "imagem": "/assets/img/artist.png"
         }
     ]
 }
+
