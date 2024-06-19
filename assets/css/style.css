@@ -122,6 +122,11 @@ i {
 }
 .repositorios {
     margin: 10px;
+    display: grid;
+
+}
+.card-body .contadorescards i{
+    font-size: 1rem;
 }
 #repo {
     border-bottom: solid 1px;

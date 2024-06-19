@@ -20,7 +20,7 @@ const texto = document.getElementById('empresaD');
     document.body.classList.toggle('dark-mode');
   }
   //Github
-  const reposit = document.querySelector('.repositorios');
+  const container = document.querySelector('.container-fluid');
   const user = document.querySelector('.perfil');
   // Dados do usuário
   function getApiGithubUser(){
@@ -33,7 +33,7 @@ const texto = document.getElementById('empresaD');
       let data = await res.json();
       usuarios(data);
       function usuarios (){
-        let repositorios = document.createElement('div');
+        
         let userdata = document.createElement('div');
         userdata.innerHTML = `
         <h4 id="perfil">Perfil</h4>
@@ -58,43 +58,70 @@ const texto = document.getElementById('empresaD');
             `
 
 
-        repositorios.innerHTML = `
-         <h4 id="repo">Repositórios (${ data.public_repos})</h4>
-                `
+
         user.appendChild(userdata)
-        reposit.appendChild(repositorios);
+     
       }
     })
 
    
   }
-  //Dados dos repositórios
-  function getApiGithubRepos(){
-    fetch('https://api.github.com/users/JgGabiruta/repos')
-    .then(async res =>{
-      if( !res.ok){
-        throw new Error(res.status);
-      }
-      let data = await res.json();
-      data.map( item =>{
-        let repo = document.createElement('div');
-        repo.innerHTML = `
+  // Dados dos repositórios
+  const reposit = document.querySelector('.repositorios'); // Certifique-se de que existe um elemento com a classe "repositorios" no seu HTML
 
-                        <div class="card col-2 m-2" style="width: 18rem;">
-                            <div class="card-body">
-                              <h5 class="card-title"><a href="repo.html" class="text-decoration-none text-reset">ProjetoWeb1</a></h5>
-                              <h6 class="card-subtitle mb-2 text-body-secondary">Apenas um teste de commits</h6>
-                              <p class="card-text">Alguns testes que fiz de commits com<a href="repo.html">...</a></p>
-                              <p><i class="fa-regular fa-star p-1"> 0</i>
-                                <i class="fa-solid fa-code-fork p-1"> 0</i> 
-                                <i class="fa-regular fa-eye p-1"> 0</i></p>
-                            </div>
-                        </div>
-                `
-                reposit.appendChild(repo);
+  // Dados dos repositórios
+  function getApiGithubRepos() {
+    fetch('https://api.github.com/users/JgGabiruta/repos')
+      .then(async res => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        let data = await res.json();
+  
+        // Cria o contador de repositórios
+        let repoCount = document.createElement('div');
+        repoCount.innerHTML = `<div id="repo"><h4>Repositórios (${data.length}):</h4></div>`;
+        reposit.appendChild(repoCount);
+  
+        // Cria a estrutura das divs container-fluid e row
+        const container = document.createElement('div');
+        container.classList.add('container-fluid');
+  
+        const row = document.createElement('div');
+        row.classList.add('row');
+  
+        // Adiciona os repositórios à div row
+        data.forEach(item => {
+          let repo = document.createElement('div');
+          repo.classList.add('col-3', 'm-2'); // Adiciona classes para garantir que os cards estejam alinhados corretamente
+          repo.innerHTML = `
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><a href="${item.html_url}" class="text-decoration-none text-reset">${item.name}</a></h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">${item.description || 'Sem descrição'}</h6>
+                <p class="card-text">${item.language || 'Linguagem não especificada'}</p>
+                <p class= "contadorescards">
+                  <i class="fa-regular fa-star p-1"> ${item.stargazers_count}</i>
+                  <i class="fa-solid fa-code-fork p-1"> ${item.forks_count}</i> 
+                  <i class="fa-regular fa-eye p-1"> ${item.watchers_count}</i>
+                </p>
+              </div>
+            </div>
+          `;
+          row.appendChild(repo);
+        });
+  
+        // Adiciona a div row à div container-fluid
+        container.appendChild(row);
+  
+        // Adiciona a div container-fluid ao contêiner principal
+        reposit.appendChild(container);
       })
-    })
+      .catch(error => console.error('Erro ao buscar dados da API:', error));
   }
+  
   getApiGithubRepos();
+  
+  
   getApiGithubUser();
 
