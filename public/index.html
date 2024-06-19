@@ -29,17 +29,24 @@
     --menu-background: #ccc;
     --menu-hover-background: gray;
     --menu-hover-color: white;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
 }
-
+.toggle-switch {
+  width: 200px;
+}
 body.dark-mode {
-    --background-color: #121212;
-    --text-color: #444;
-    --link-color: #bb86fc;
+    --background-color: #0d1117;
+    --text-color: white;
+    --repos-border-color: #30363d; 
+    --link-color: white;
     --hover-background: #333;
-    --hover-color: #bb86fc;
+    --hover-color: white;
     --menu-background: #333;
     --menu-hover-background: #444;
-    --menu-hover-color: #bb86fc;
+    --menu-hover-color: white;
 }
 
 body {
@@ -81,12 +88,58 @@ h4, h5, p {
     color: var(--text-color);
 }
 
+
 #perfil, #repo, #conteudo, #colegas {
-    border-color: var(--text-color);
+    border-color: var(--repos-border-color);
 }
+/*Titulo dos repositórios*/
 #repo {
   background-color: var(--background-color);
 }
+
+label {
+  position: absolute;
+  width: 13%;
+  right: 70%;
+  height: 55px;
+  background-color: var(--dark);
+  border-radius: 50px;
+  cursor: pointer;
+}
+input {
+  position: absolute;
+  display: none;
+}
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+input:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 16px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: inset 28px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  transition: 0.3s;
+}
+
+input:checked ~ .slider::before {
+  transform: translateX(95px);
+  background-color: var(--dark);
+  box-shadow: none;
+}
+
 
       </style>
 </head>
@@ -105,7 +158,10 @@ h4, h5, p {
                   <li><a class="dropdown-item" href="#cole">Colegas</a></li>              
                 </ul>
               </li>
-              <button class="modoescurobtn" onclick="toggleDarkMode()">Modo escuro</button>      
+              <label id="modoescuro-btn">
+                <input onclick="toggleDarkMode()" type = 'checkbox'>
+                <span class = 'slider'></span>
+              </label>      
         </nav>
         
         
@@ -122,67 +178,9 @@ h4, h5, p {
         
    
         <!--Perfil-->
-        <div class="perfil mx-2">
-            <h4 id="perfil">Perfil</h4>
-            <img id="eu" src="../assets/img/eu2.jpg" alt="...">
-            <h5 class="text-primary">João Gabriel Soares Da Silva Franco</h5>
-            <p class="m-2">Olá! Eu sou o João Gabriel e eu estou aqui para programar, meu grande sonho é me tornar um programador de sucesso, neste site você vai encontrar meus repositorios, empresas big tech que achei interessante e que tenho vontade de trabalhar um dia e o meu projeto que tenho com meus colegas.</p>
-            <p class="m-2">Localização: Belo Horizonte, Minas Gerais, Brasil</p>
-            <p class="">Site: https://github.com/JgGabiruta</p>
-            <div class="redes ">
-                
-              <div class="grow-container">
-                  <i class="fa-solid fa-user mt-4"> 0</i>
-                <!--INSTAGRAM-->
-                <a href="https://www.instagram.com/joao_gabrielgabiruta/" target="_blank" class="to-insta circle-button"><i class="fa-brands fa-instagram mt-4" aria-hidden="true"></i></a>
-                  <!--GMAIL-->
-                <a href="mailto: jgssfranco@sga.pucminas.br" class="to-red circle-button"><i class="fa fa-google-plus" aria-hidden="true"></i></a> 
-                <!--GITHUB-->
-                <a href="https://github.com/JgGabiruta" target="_blank" class="to-git circle-button"><i class="fa fa-github" aria-hidden="true"></i></a>
-              </div>
-            </div>
-        </div>
-        <section id="reposito">
-            <div class="repositorios">
-                <h4 id="repo">Repositórios (3)</h4>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="card col-2 m-2" style="width: 18rem;">
-                            <div class="card-body">
-                              <h5 class="card-title"><a href="repo.html" class="text-decoration-none text-reset">ProjetoWeb1</a></h5>
-                              <h6 class="card-subtitle mb-2 text-body-secondary">Apenas um teste de commits</h6>
-                              <p class="card-text">Alguns testes que fiz de commits com<a href="repo.html">...</a></p>
-                              <p><i class="fa-regular fa-star p-1"> 0</i>
-                                <i class="fa-solid fa-code-fork p-1"> 0</i> 
-                                <i class="fa-regular fa-eye p-1"> 0</i></p>
-                            </div>
-                        </div>
-                        <div class="card col-2 m-2" style="width: 18rem;">
-                            <div class="card-body">
-                              <h5 class="card-title"><a href="repo2.html" class="text-decoration-none text-reset">pco-si-2024-1-tiaw-art...</a></h5>
-                              <h6 class="card-subtitle mb-2 text-body-secondary">Trabalho interdisciplinar</h6>
-                              <p class="card-text">O Artist Finder é uma plataforma online dedicada a simplificar o processo de conexão entr<a href="repo2.html">...</a></p>
-                              <p><i class="fa-regular fa-star p-1"> 5</i>
-                                <i class="fa-solid fa-code-fork p-1"> 0</i> 
-                                <i class="fa-regular fa-eye p-1"> 0</i></p>
-                            
-                            </div>
-                        </div>
-                          <div class="card col-2 m-2" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="repo3.html" class="text-decoration-none text-reset">Hello-World</a></h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Prática</h6>
-                                    <p class="card-text">Este é um repositório para praticar<a href="repo3.html">...</a></p>
-                                    <p><i class="fa-regular fa-star p-1"> 1</i>
-                                        <i class="fa-solid fa-code-fork p-1"> 0</i> 
-                                        <i class="fa-regular fa-eye p-1"> 0</i></p>
-                                    
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                
-            </div>
+        <div class="perfil mx-2"></div>
+        <section>
+            <div class="repositorios"></div>
         </section>
         <section id="cont">
             <div class="conteudo">

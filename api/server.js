@@ -1,4 +1,4 @@
-// JSON - Server Module
+/*// JSON - Server Module
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('../scripts/api/db.json');
@@ -21,3 +21,4 @@ server.listen(3000, () => {
 });
 // Export the server api
 module.exports = server;
+*/
