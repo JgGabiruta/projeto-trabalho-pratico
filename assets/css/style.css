@@ -144,37 +144,19 @@ i {
     margin: 10px;
     
 }
+#colegas{
+    border: solid 1px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15%;    
+}
+#colegas img{
+    border-radius: 10%;
+}
+
 #colegasT {
     border-bottom: solid 1px;
 
-}
-#alf{
-    border: solid 1px;
-    margin: 10px;
-}
-#die{
-    border: solid 1px;
-    margin: 10px;
-}
-#lucas{
-    border: solid 1px;
-    margin: 10px;
-}
-#pablo{
-    border: solid 1px;
-    margin: 10px;
-}
-#alf img{
-    padding: 10px;
-}
-#lucas img{
-    padding: 10px;
-}
-#die img{
-    padding: 10px;
-}
-#pablo{
-    padding: 10px;
 }
 #projetow {
     border-bottom: solid #ccc 5px;

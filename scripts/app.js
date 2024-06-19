@@ -1,5 +1,6 @@
 const carouselApi = 'http://localhost:3000/conteudo';
 const colegasApi = 'http://localhost:3000/colegas';
+const redes = 'http://localhost:3000/redes-sociais';
 // Puxando dados do json-server e colocando nos carousel's
 document.addEventListener('DOMContentLoaded', function() {
   fetch(carouselApi)
@@ -17,8 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
                   <div class="carousel-item ${activeClass}">
                       <img src="${item.imagem}" class="d-block w-100" alt="${item.nome}">
                       <div class="carousel-caption d-none d-md-block">
-                          <h5>${item.nome}</h5>
-                          <p>${item.descricao}</p>
                       </div>
                   </div>
               `;
@@ -52,8 +51,14 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(error => console.error('Erro ao buscar os dados do JSON Server:', error));
 });
+//Puxando dados do json para preencher os links das redes sociais
+ function getRedesSociais(){
+  fetch(redes)
+  .then(async res =>{
+    throw new Error(res.status);
 
-
+  })
+ }
   
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
@@ -61,52 +66,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   //Github API
-  const container = document.querySelector('.container-fluid');
-  const user = document.querySelector('.perfil');
-  // Dados do usuário
-  function getApiGithubUser(){
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fetch GitHub user data
     fetch('https://api.github.com/users/JgGabiruta')
-      .then(async res => {
-        if( !res.ok){
-          throw new Error(res.status);
-        }
+        .then(async res => {
+            if (!res.ok) {
+                throw new Error(res.status);
+            }
+            let githubData = await res.json();
+            return githubData;
+        })
+        .then(githubData => {
+            // Fetch social links JSON Server
+            fetch('http://localhost:3000/social_links')
+                .then(async res => {
+                    if (!res.ok) {
+                        throw new Error(res.status);
+                    }
+                    let socialData = await res.json();
+                    displayUserData(githubData, socialData);
+                })
+                .catch(error => console.error('Erro ao buscar os dados das redes sociais do JSON Server:', error));
+        })
+        .catch(error => console.error('Erro ao buscar os dados do GitHub:', error));
+});
 
-      let data = await res.json();
-      usuarios(data);
-      function usuarios (){
-        
-        let userdata = document.createElement('div');
-        userdata.innerHTML = `
+function displayUserData(githubData, socialData) {
+    const user = document.querySelector('.perfil');
+
+    let userdata = document.createElement('div');
+    userdata.innerHTML = `
         <h4 id="perfil">Perfil</h4>
-            <img id="eu" src="${data.avatar_url}" alt="...">
-            <h5 class="text-primary">${data.name}</h5>
-            <p class="m-2">Bio: ${data.bio}</p>
-            <p class="m-2">Neste site você vai encontrar meus repositorios, empresas big tech que achei interessante e que tenho vontade de trabalhar um dia e o meu projeto que tenho com meus colegas.</p>
-            <p class="m-2">Localização: ${data.location}</p>
-            <p class="">Site: ${data.html_url}</p>
-            <div class="redes ">
-                
-              <div class="grow-container">
-                  <i class="fa-solid fa-user mt-4">${data.followers}</i>
-                <!--INSTAGRAM-->
-                <a href="https://www.instagram.com/joao_gabrielgabiruta/" target="_blank" class="to-red circle-button"><i class="fa-brands fa-instagram mt-4" aria-hidden="true"></i></a>
-                  <!--Linkedin-->
-                <a href="https://www.linkedin.com/in/jo%C3%A3o-gabriel-soares-da-silva-franco-681223201?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="to-insta circle-button" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a> 
-                <!--GITHUB-->
-                <a href="https://github.com/JgGabiruta" target="_blank" class="to-git circle-button"><i class="fa fa-github" aria-hidden="true"></i></a>
-              </div>
+        <img id="eu" src="${githubData.avatar_url}" alt="...">
+        <h5 class="text-primary">${githubData.name}</h5>
+        <p class="m-2">Bio: ${githubData.bio}</p>
+        <p class="m-2">Neste site você vai encontrar meus repositorios, empresas big tech que achei interessante e que tenho vontade de trabalhar um dia e o meu projeto que tenho com meus colegas.</p>
+        <p class="m-2">Localização: ${githubData.location}</p>
+        <p class="">Site: <a href="${githubData.html_url}" target="_blank">${githubData.html_url}</a></p>
+        <div class="redes">
+            <div class="grow-container">
+                <i class="fa-solid fa-user mt-4">${githubData.followers}</i>
+                <!-- INSTAGRAM -->
+                <a href="${socialData.instagram}" target="_blank" class="to-red circle-button">
+                    <i class="fa-brands fa-instagram mt-4" aria-hidden="true"></i>
+                </a>
+                <!-- LINKEDIN -->
+                <a href="${socialData.linkedin}" class="to-insta circle-button" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <!-- GITHUB -->
+                <a href="${socialData.github}" target="_blank" class="to-git circle-button">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
             </div>
-            `
+        </div>
+    `;
 
+    user.appendChild(userdata);
+}
 
-
-        user.appendChild(userdata)
-     
-      }
-    })
-
-   
-  }
   // Dados dos repositórios
   const reposit = document.querySelector('.repositorios'); // Certifique-se de que existe um elemento com a classe "repositorios" no seu HTML
 

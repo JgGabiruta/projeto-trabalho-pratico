@@ -20,9 +20,9 @@
         },
         {
             "id": "4",
-            "nome": "NVIDIA",
-            "descricao": "Nvidia Corporation estilizada como NVIDIA ou, devido ao seu logotipo, nVIDIA é uma empresa multinacional de tecnologia incorporada em Delaware e com sede em Santa Clara, Califórnia.",
-            "imagem": "/assets/img/nvidia.jpg"
+            "nome": "Accenture",
+            "descricao": "",
+            "imagem": "/assets/img/accenture.jpeg"
         },
         {
             "id": "5",
@@ -58,6 +58,12 @@
             "nome": "Pablo Marques",
             "foto": "/assets/img/pablo.jpg"
         }
-    ]
+    ],
+    "social_links": {
+          "instagram": "https://www.instagram.com/joao_gabrielgabiruta/",
+          "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-gabriel-soares-da-silva-franco-681223201",
+          "github": "https://github.com/JgGabiruta"
+    }
+      
 }
 
