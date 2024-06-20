@@ -158,7 +158,7 @@ function displayUserData(githubData, socialData) {
           repo.innerHTML = `
             <div class="card" style="width: 100%;">
               <div class="card-body">
-                <h5 class="card-title"><a href="${item.html_url}" class="text-decoration-none text-reset">${item.name}</a></h5>
+                <h5 class="card-title"><a href="repo.html?repo=${item.name}" class="text-decoration-none text-reset">${item.name}</a></h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">${item.description || 'Sem descrição'}</h6>
                 <p class="card-text">${item.language || 'Linguagem não especificada'}</p>
                 <p class="contadorescards">
@@ -182,3 +182,41 @@ function displayUserData(githubData, socialData) {
   }
   getApiGithubRepos();
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const repoName = params.get('repo');
+  
+    if (repoName) {
+        fetch(`https://api.github.com/repos/JgGabiruta/${repoName}`)
+            .then(response => response.json())
+            .then(repo => {
+                const repoContent = document.getElementById('repo-content');
+                const info = document.getElementById('info');
+  
+                // Generando botões de tópicos
+                const topicsButtons = repo.topics.map(topic => `
+                    <button type="button" class="btn btn-primary m-1">${topic}</button>
+                `).join('');
+  
+                repoContent.innerHTML = `
+                <h5 id="projetow">Repositório: ${repo.name} </h5>
+                <h6 class="text-primary">Descrição</h6>
+                  <p>${repo.description}</p>
+                  <h6 class="text-primary">Data de Criação</h6>
+                  <p>${repo.created_at}</p>
+                  <h6 class="text-primary">Linguagem</h6>
+                  <p>${repo.language}</p>
+                  <h6 class="text-primary">Link de Acesso</h6>
+                  <a href="${repo.html_url}" target="_blank" class="text-decoration-none">https://github.com/JgGabiruta/${repo.name}</a>
+                  <h6 class="text-primary">Tópicos</h6>
+                  <div>${topicsButtons}</div>
+                  `;
+  
+                info.innerHTML = `<li><i class="fa-regular fa-star">${repo.stargazers_count}</i></li>
+                      <li><i class="fa-solid fa-code-fork"></i>${repo.forks_count}</li>
+                      <li><i class="fa-regular fa-eye"></i>${repo.watchers_count}</li>`
+            })
+            .catch(error => console.error('Erro ao buscar detalhes do repositório', error));
+          }
+        });
+  
