@@ -1,6 +1,6 @@
-const carouselApi = 'back-end-diw-ruby.vercel.app/conteudo';
-const colegasApi = 'back-end-diw-ruby.vercel.app/colegas';
-const redes = 'back-end-diw-ruby.vercel.app/redes-sociais';
+const carouselApi = 'https://back-end-diw-ruby.vercel.app/conteudo';
+const colegasApi = 'https://back-end-diw-ruby.vercel.app/colegas';
+const redes = 'https://back-end-diw-ruby.vercel.app/redes-sociais';
 // Puxando dados do json-server e colocando nos carousel's
 document.addEventListener('DOMContentLoaded', function() {
   fetch(carouselApi)
