@@ -4,53 +4,53 @@
             "id": "1",
             "nome": "Google",
             "descricao": "A Google inovou e continua inovando trazendo sempre experiencias ímpares com seus usuários e ideias revolucionárias",
-            "imagem": "/assets/img/google.jpg"
+            "imagem": "/public/assets/img/google.jpg"
         },
         {
             "id": "2",
             "nome": "Microsoft",
             "descricao": "A Microsoft é uma empresa de tecnologia conhecida por seu sistema operacional Windows e software Office.",
-            "imagem": "/assets/img/microsoft.jpg"
+            "imagem": "/public/assets/img/microsoft.jpg"
         },
         {
             "id": "3",
             "nome": "Apple",
             "descricao": "A Apple foi a primeira a fazer um computador pessoal, e foi a primeira a desenvolver um smartphone, ela conseguiu se manter em relevância até os dias de hoje",
-            "imagem": "/assets/img/apple.png"
+            "imagem": "/public/assets/img/apple.png"
         },
         {
             "id": "4",
             "nome": "Accenture",
             "descricao": "A Accenture é uma empresa global de serviços profissionais conhecida por sua inovação em estratégia, consultoria e tecnologia.",
-            "imagem": "/assets/img/accenture.jpeg"
+            "imagem": "/public/assets/img/accenture.jpeg"
         },
         {
             "id": "5",
             "nome": "OpenAI",
             "descricao": "OpenAI é um laboratório de pesquisa de inteligência artificial estadunidense que consiste na organização sem fins lucrativos OpenAI Incorporated e sua subsidiária com fins lucrativos OpenAI Limited Partnership.",
-            "imagem": "/assets/img/openai.jpg"
+            "imagem": "/public/assets/img/openai.jpg"
         }
     ],
     "colegas":[
         {
             "id": "1",
             "nome": "Alfredo Campos",
-            "foto": "/assets/img/alfredo.jpg"
+            "foto": "/public/assets/img/alfredo.jpg"
         },
         {
             "id": "2",
             "nome": "Diego Romero",
-            "foto": "/assets/img/diego.jpg"
+            "foto": "/public/assets/img/diego.jpg"
         },
         {
             "id": "3",
             "nome": "Lucas Fernandes",
-            "foto": "/assets/img/lucas.png"
+            "foto": "/public/assets/img/lucas.png"
         },
         {
             "id": "4",
             "nome": "Pablo Marques",
-            "foto": "/assets/img/pablo.jpg"
+            "foto": "/public/assets/img/pablo.jpg"
         }
     ],
     "social_links": {
