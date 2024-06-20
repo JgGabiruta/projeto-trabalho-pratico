@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(githubData => {
             // Fetch social links JSON Server
-            fetch('http://localhost:3000/social_links')
+            fetch(redes)
                 .then(async res => {
                     if (!res.ok) {
                         throw new Error(res.status);
