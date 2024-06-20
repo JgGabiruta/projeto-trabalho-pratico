@@ -112,6 +112,9 @@ i {
     margin: 10px;
     
 }
+.perfil i {
+    color: #1DE1F3;
+}
 .perfil h5 {
     padding-top: 10px;
 }
@@ -140,6 +143,18 @@ i {
 #conteudo {
     border-bottom: solid 1px;
 }
+
+
+.carousel-caption p {
+    color: rgb(179, 175, 90);
+    font-weight: bold;
+    padding-bottom: -100px;
+}
+.carousel-caption h5 {
+    color: rgb(179, 175, 90);
+    font-weight: bolder;
+}
+
 .colegas{
     margin: 10px;
     

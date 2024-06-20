@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
                   <div class="carousel-item ${activeClass}">
                       <img src="${item.imagem}" class="d-block w-100" alt="${item.nome}">
                       <div class="carousel-caption d-none d-md-block">
+                      <h5>${item.nome}</h5>
+                      <p>${item.descricao}</p>
                       </div>
                   </div>
               `;
@@ -105,7 +107,7 @@ function displayUserData(githubData, socialData) {
         <p class="">Site: <a href="${githubData.html_url}" target="_blank">${githubData.html_url}</a></p>
         <div class="redes">
             <div class="grow-container">
-                <i class="fa-solid fa-user mt-4">${githubData.followers}</i>
+                <i class="fa-solid fa-user mt-4"> ${githubData.followers}</i>
                 <!-- INSTAGRAM -->
                 <a href="${socialData.instagram}" target="_blank" class="to-red circle-button">
                     <i class="fa-brands fa-instagram mt-4" aria-hidden="true"></i>
