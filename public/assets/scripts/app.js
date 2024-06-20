@@ -61,10 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   })
  }
-  
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
+ function toggleDarkMode() {
+   document.body.classList.toggle('dark-mode');
+ }
 
 
   //Github API
@@ -141,7 +140,7 @@ function displayUserData(githubData, socialData) {
 
         // Cria o contador de repositórios
         let repoCount = document.createElement('div');
-        repoCount.innerHTML = `<div id="repo"><h4>Repositórios (${data.length}):</h4></div>`;
+        repoCount.innerHTML = `<div id="repo"><h4>Repositório(s) (${data.length})</h4></div>`;
         reposit.appendChild(repoCount);
 
         // Cria a estrutura das divs container-fluid e row
@@ -219,4 +218,3 @@ function displayUserData(githubData, socialData) {
             .catch(error => console.error('Erro ao buscar detalhes do repositório', error));
           }
         });
-  

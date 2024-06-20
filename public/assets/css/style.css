@@ -7,6 +7,17 @@
     margin: 10px;
 }
 
+/* CARROUSEL*/
+.custom-carousel {
+    max-width: 10000px; /* Defina a largura máxima desejada */
+    margin: auto; /* Centraliza o carrossel na página */
+}
+
+.custom-carousel .carousel-inner img {
+    height: 400px; /* Defina a altura desejada */
+    object-fit: fill; /* Faz a imagem cobrir todo o espaço disponível */
+    border-radius: 1%;
+}
 .circle-button{
     font-family: 'Roboto', sans-serif;
     color: #ccc;
@@ -202,6 +213,10 @@ i {
     }
     .menu {
         display: none;
+    }
+    .custom-carousel .carousel-inner img {
+        object-fit: contain; /* Faz a imagem cobrir todo o espaço disponível */
+        border-radius: 1%;
     }
 
 
