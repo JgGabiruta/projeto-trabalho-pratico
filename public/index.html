@@ -11,34 +11,20 @@
         <style>
           /*Modo escuro*/
           :root {
-    --background-color: whitesmoke;
-    --text-color: black;
-    --link-color: blue;
-    --hover-background: gray;
+    --background-color: #0d1117;
+    --text-color: white;
+    --link-color: white;
+    --repos-border-color: #30363d;
+    --hover-background: #333;
     --hover-color: white;
-    --menu-background: #ccc;
-    --menu-hover-background: gray;
+    --menu-background: #333;
+    --menu-hover-background: #444;
     --menu-hover-color: white;
     --light: #d8dbe0;
     --dark: #28292c;
     --link: rgb(27, 129, 112);
     --link-hover: rgb(24, 94, 82);
 }
-.toggle-switch {
-  width: 200px;
-}
-body.dark-mode {
-    --background-color: #0d1117;
-    --text-color: white;
-    --repos-border-color: #30363d; 
-    --link-color: white;
-    --hover-background: #333;
-    --hover-color: white;
-    --menu-background: #333;
-    --menu-hover-background: #444;
-    --menu-hover-color: white;
-}
-
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -87,48 +73,6 @@ h4, h5, p {
   background-color: var(--background-color);
 }
 
-label {
-  position: absolute;
-  width: 13%;
-  right: 70%;
-  height: 55px;
-  background-color: var(--dark);
-  border-radius: 50px;
-  cursor: pointer;
-}
-input {
-  position: absolute;
-  display: none;
-}
-.slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50px;
-  transition: 0.3s;
-}
-input:checked ~ .slider {
-  background-color: var(--light);
-}
-
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 13px;
-  left: 16px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  box-shadow: inset 28px -4px 0px 0px var(--light);
-  background-color: var(--dark);
-  transition: 0.3s;
-}
-
-input:checked ~ .slider::before {
-  transform: translateX(95px);
-  background-color: var(--dark);
-  box-shadow: none;
-}
       </style>
 </head>
 <body>
