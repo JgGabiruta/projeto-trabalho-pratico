@@ -92,9 +92,7 @@ i {
 #nome{
     background-color: #ccc;
     padding: 10px;
-    margin-right: 50%;
-    border-radius: 5px;
-    
+    margin-right: 50%;    
 }
 #nome:hover {
     background-color: gray;
@@ -202,11 +200,9 @@ i {
 
 /*Css Mobile */
 @media screen and (max-width:1000px) {
-    #modoescuro-btn{
-        display: none;
-    }
+
     #repo {
-        display: absolute;
+        display: none;/*por enquanto está none*/
     }
     .nav-item {
         display: flex;
