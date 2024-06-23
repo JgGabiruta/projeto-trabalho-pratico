@@ -3,7 +3,7 @@
         {
             "id": "1",
             "nome": "Google",
-            "descricao": "A Google inovou e continua inovando trazendo sempre experiencias ímpares com seus usuários e ideias revolucionárias",
+            "descricao": "A Google inovou e continua inovando trazendo sempre experiencias ímpares com seus usuários e ideias revolucionárias.",
             "imagem": "/public/assets/img/google.jpg"
         },
         {
@@ -15,7 +15,7 @@
         {
             "id": "3",
             "nome": "Apple",
-            "descricao": "A Apple foi a primeira a fazer um computador pessoal, e foi a primeira a desenvolver um smartphone, ela conseguiu se manter em relevância até os dias de hoje",
+            "descricao": "A Apple foi a primeira a fazer um computador pessoal, e foi a primeira a desenvolver um smartphone, ela conseguiu se manter em relevância até os dias de hoje.",
             "imagem": "/public/assets/img/apple.png"
         },
         {
