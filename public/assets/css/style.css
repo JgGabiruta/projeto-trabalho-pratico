@@ -205,9 +205,7 @@ i {
     #modoescuro-btn{
         display: none;
     }
-    #repo {
-        display: none;/*por enquanto está none*/
-    }
+
     .nav-item {
         display: flex;
         justify-content: end;
