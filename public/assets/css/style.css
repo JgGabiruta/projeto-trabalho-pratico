@@ -205,7 +205,9 @@ i {
     #modoescuro-btn{
         display: none;
     }
-
+    #repo {
+        display: absolute;
+    }
     .nav-item {
         display: flex;
         justify-content: end;
