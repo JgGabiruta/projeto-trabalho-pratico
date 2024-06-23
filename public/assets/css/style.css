@@ -127,6 +127,9 @@ i {
 .perfil h5 {
     padding-top: 10px;
 }
+#info i {
+    color: #1DE1F3;
+}
 .redes img{
     width: 40px;
     text-decoration: none;
