@@ -108,7 +108,7 @@ function displayUserData(githubData, socialData) {
                 <i class="fa-solid fa-user mt-4"> ${githubData.followers}</i>
                 <!-- INSTAGRAM -->
                 <a href="${socialData.instagram}" target="_blank" class="to-red circle-button">
-                    <i class="fa-brands fa-instagram mt-4" aria-hidden="true"></i>
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
                 <!-- LINKEDIN -->
                 <a href="${socialData.linkedin}" class="to-insta circle-button" target="_blank">
@@ -207,7 +207,7 @@ function displayUserData(githubData, socialData) {
                   <div>${topicsButtons}</div>
                   `;
   
-                info.innerHTML = `<li><i class="fa-regular fa-star">${repo.stargazers_count}</i></li>
+                info.innerHTML = `<li><i class="fa-regular fa-star"></i>${repo.stargazers_count}</li>
                       <li><i class="fa-solid fa-code-fork"></i>${repo.forks_count}</li>
                       <li><i class="fa-regular fa-eye"></i>${repo.watchers_count}</li>`
             })
