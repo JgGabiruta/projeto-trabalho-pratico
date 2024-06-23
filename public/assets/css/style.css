@@ -167,6 +167,8 @@ i {
     font-weight: bolder;
     background-color: black;
     width: 10%;
+    display: flex;
+    justify-content: center;
 }
 
 .colegas{
