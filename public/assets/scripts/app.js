@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <div id="colegas" style="width: 10rem;">
                         <img src="${colega.foto}" class="card-img-top" alt="${colega.nome}">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">${colega.nome}</h5>
+                            <h5 class="card-title">${colega.nome}</h5>
                         </div>
                     </div>
               `;
@@ -96,11 +96,13 @@ function displayUserData(githubData, socialData) {
     userdata.innerHTML = `
         <h4 id="perfil">Perfil</h4>
         <img id="eu" src="${githubData.avatar_url}" alt="...">
-        <h5 class="text-primary">${githubData.name}</h5>
-        <p class="m-2">Bio: ${githubData.bio}</p>
-        <p class="m-2">Neste site você vai encontrar meus repositorios, empresas big tech que achei interessante e que tenho vontade de trabalhar um dia e o meu projeto que tenho com meus colegas.</p>
-        <p class="m-2">Localização: ${githubData.location}</p>
-        <p class="">Site: <a href="${githubData.html_url}" target="_blank">${githubData.html_url}</a></p>
+        <h5>${githubData.name}</h5>
+        <div id="texto">
+        <p>Bio: ${githubData.bio}</p>
+        <p>Neste site você vai encontrar meus repositorios, empresas big tech que achei interessante e que tenho vontade de trabalhar um dia e o meu projeto que tenho com meus colegas.</p>
+        <p>Localização: ${githubData.location}</p>
+        <p>Site: <a href="${githubData.html_url}" target="_blank">${githubData.html_url}</a></p>
+        </div>
         <div class="redes">
             <div class="grow-container">
                 <i class="fa-solid fa-user mt-4"> ${githubData.followers}</i>
@@ -147,10 +149,9 @@ function displayUserData(githubData, socialData) {
         const row = document.createElement('div');
         row.classList.add('row');
 
-        // Adiciona os repositórios à div row
         data.forEach(item => {
           let repo = document.createElement('div');
-          repo.classList.add('col-sm-12', 'col-md-6', 'col-lg-4', 'col-xl-3', 'mb-4'); // Adiciona classes para garantir que os cards estejam alinhados corretamente e responsivos
+          repo.classList.add('col-sm-12', 'col-md-6', 'col-lg-4', 'col-xl-3', 'mb-4');
           repo.innerHTML = `
             <div class="card" style="width: 100%;">
               <div class="card-body">
@@ -168,10 +169,8 @@ function displayUserData(githubData, socialData) {
           row.appendChild(repo);
         });
 
-        // Adiciona a div row à div container-fluid
         container.appendChild(row);
 
-        // Adiciona a div container-fluid ao contêiner principal
         reposit.appendChild(container);
       })
       .catch(error => console.error('Erro ao buscar dados da API:', error));
@@ -191,20 +190,20 @@ function displayUserData(githubData, socialData) {
   
                 // Generando botões de tópicos
                 const topicsButtons = repo.topics.map(topic => `
-                    <button type="button" class="btn btn-primary m-1">${topic}</button>
+                    <button type="button" class="btn btn-secondary m-1">${topic}</button>
                 `).join('');
   
                 repoContent.innerHTML = `
                 <h5 id="projetow">Repositório: ${repo.name} </h5>
-                <h6 class="text-primary">Descrição</h6>
+                <h6>Descrição</h6>
                   <p>${repo.description}</p>
-                  <h6 class="text-primary">Data de Criação</h6>
+                  <h6>Data de Criação</h6>
                   <p>${repo.created_at}</p>
-                  <h6 class="text-primary">Linguagem</h6>
+                  <h6>Linguagem</h6>
                   <p>${repo.language}</p>
-                  <h6 class="text-primary">Link de Acesso</h6>
+                  <h6>Link de Acesso</h6>
                   <a href="${repo.html_url}" target="_blank" class="text-decoration-none">https://github.com/JgGabiruta/${repo.name}</a>
-                  <h6 class="text-primary">Tópicos</h6>
+                  <h6 id= "topicos">Tópicos</h6>
                   <div>${topicsButtons}</div>
                   `;
   

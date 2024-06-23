@@ -101,7 +101,7 @@ i {
 #perfil {
     font-weight: bolder;
     border-bottom: solid 1px black;
-
+    
 }
 .perfil img {
    
@@ -116,17 +116,24 @@ i {
 }
 .perfil {
     float: right;
-    margin: 10px;
-    
+}
+.perfil h5 {
+    padding-left: 33%;
+    color: #628486;
+}
+#texto {
+    margin-left: 40px;
+    padding-left: 30%;
+
 }
 .perfil i {
-    color: #1DE1F3;
+    color: #628486;
 }
 .perfil h5 {
     padding-top: 10px;
 }
 #info i {
-    color: #1DE1F3;
+    color: #628486;
 }
 .redes img{
     width: 40px;
@@ -176,7 +183,11 @@ i {
     border: solid 1px;
     padding: 10px;
     margin: 5px;
-    border-radius: 15%;    
+    border-radius: 15%;
+    background-color: white;    
+}
+#colegas h5 {
+    color: black;
 }
 #colegas img{
     border-radius: 10%;
@@ -186,8 +197,14 @@ i {
     border-bottom: solid 1px;
 
 }
+#repo-content h6, p {
+    color: #628486;
+}
+#topicos {
+    margin-top: 1%;
+}
 #projetow {
-    border-bottom: solid #ccc 5px;
+    border-bottom: solid #474545 1px;
 }
 .info ul li {
     list-style-type: none;
