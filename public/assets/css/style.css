@@ -97,6 +97,7 @@ i {
     color:  white;
 }
 #perfil {
+    margin: 20px;
     font-weight: bolder;
     border-bottom: solid 1px black;
     
@@ -144,6 +145,9 @@ i {
 }
 .container-fluid{
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-body .contadorescards i{
@@ -216,15 +220,20 @@ i {
 /*Css Mobile */
 @media screen and (max-width:1000px) {
 
-    #repo {
-        display: none;/*por enquanto está none*/
-    }
     .nav-item {
         display: flex;
-        justify-content: end;
         float: right;
         border-radius: 5px;
         margin-right: 10px;
+    }
+    .nav-item i {
+        color: white;
+    }
+    #repositoriosmenu{
+        display: flex;
+        float: right;
+        border-radius: 5px;
+        margin-top: -5%;
     }
     .menu {
         display: none;

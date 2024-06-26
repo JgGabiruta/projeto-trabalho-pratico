@@ -126,7 +126,7 @@ function displayUserData(githubData, socialData) {
 }
 
   // Dados dos repositórios
-  const reposit = document.querySelector('.repositorios'); // Certifique-se de que existe um elemento com a classe "repositorios" no seu HTML
+  const reposit = document.querySelector('.container-fluid'); // Certifique-se de que existe um elemento com a classe "repositorios" no seu HTML
 
   // Dados dos repositórios
   function getApiGithubRepos() {
@@ -138,14 +138,13 @@ function displayUserData(githubData, socialData) {
         let data = await res.json();
 
         // Cria o contador de repositórios
-        let repoCount = document.createElement('div');
-        repoCount.innerHTML = `<div id="repo"><h4>Repositório(s) (${data.length})</h4></div>`;
+        let repoCount = document.createElement('h4');
+        repoCount.setAttribute('id', 'repo');
+        repoCount.innerHTML = `Repositório(s) (${data.length})`;
         reposit.appendChild(repoCount);
 
         // Cria a estrutura das divs container-fluid e row
-        const container = document.createElement('div');
-        container.classList.add('container-fluid');
-
+        const container = document.querySelector('.container-fluid');
         const row = document.createElement('div');
         row.classList.add('row');
 
