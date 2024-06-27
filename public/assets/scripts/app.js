@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     let socialData = await res.json();
                     displayUserData(githubData, socialData);
                 })
-                .catch(error => console.error('Erro ao buscar os dados das redes sociais do JSON Server:', error));
+                .catch(error => console.clear('Erro ao buscar os dados das redes sociais do JSON Server:', error));
         })
         .catch(error => console.error('Erro ao buscar os dados do GitHub:', error));
 });
@@ -170,7 +170,6 @@ function displayUserData(githubData, socialData) {
 
         container.appendChild(row);
 
-        reposit.appendChild(container);
       })
       .catch(error => console.error('Erro ao buscar dados da API:', error));
   }
